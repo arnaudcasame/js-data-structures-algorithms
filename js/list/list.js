@@ -84,13 +84,17 @@ var end = function(){
 };
 
 var prev = function(){
-    if(this.pos === 0){
-        this.pos - 1;
+    if(this.pos > 0){
+        this.pos -= 1;
+        return true;
     }
 };
 
 var next = function(){
-    this.pos = (this.pos === this.length - 1) ? this.post : this.post + 1;
+    if(this.pos < this.listSize){
+        this.pos += 1;
+        return true;
+    }
 };
 
 var currPos = function(){
