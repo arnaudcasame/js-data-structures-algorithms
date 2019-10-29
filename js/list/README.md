@@ -1,9 +1,9 @@
-## ADT-List in Javascript
+## ADT-List definition
 | Elements | Details |
 |----------------------|-------------------|
 listSize (property) | Number of elements in list
 pos (property) | Current position in list 
-length (property)| Returns the number of elements in list
+length (function)| Returns the number of elements in list
 clear (function)| Clears all elements from list
 toString (function)| Returns string representation of list
 getElement (function)| Returns element at current position
