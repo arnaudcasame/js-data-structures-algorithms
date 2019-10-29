@@ -6,6 +6,7 @@ function List(){
     this.pos = 0;
     this.length = length;
     this.clear = clear;
+    this.contains = contains;
     this.toString = toString;
     this.getElement = getElement;
     this.insert = insert;
@@ -26,7 +27,13 @@ var length = function(){
 };
 
 var clear = function(){
+    delete this.dataStore;
     this.dataStore = [];
+    this.listSize = this.pos = 0;
+};
+
+var contains = function(element){
+    return this.find(element) < 0 ? false : true;
 };
 
 var toString = function(){
@@ -41,8 +48,15 @@ var getElement = function(){
     return this.dataStore[this.pos];
 };
 
-var insert = function(pos, element){
-    this.dataStore.splice(pos, 0, element);
+var insert = function(element, elementToInsert){
+    // I call this method THE WAVE
+    var pos = this.find(element);
+    for(var i=pos; i<this.listSize; i++){
+        element = this.dataStore[i+1];
+        this.dataStore[i+1] = elementToInsert;
+        elementToInsert = element;
+    }
+    this.listSize++;
 };
 
 var append = function(element){
@@ -66,11 +80,13 @@ var front = function(){
 };
 
 var end = function(){
-    this.pos = this.length - 1;
+    this.pos = this.listSize - 1;
 };
 
 var prev = function(){
-    this.pos = (this.pos === 0) ? 0 : this.pos - 1;
+    if(this.pos === 0){
+        this.pos - 1;
+    }
 };
 
 var next = function(){
@@ -109,6 +125,6 @@ list.append(4);
 list.append(5);
 list.append(6);
 list.print();
-list.remove(3);
+list.insert(3, 10);
 list.print();
-console.log(list.toString());
+console.log(list.contains(20));
