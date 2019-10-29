@@ -3,7 +3,7 @@
 function List(){
     this.dataStore = [];
     this.listSize = 0;
-    this.pos = 0;
+    this.pos = -1;
     this.length = length;
     this.clear = clear;
     this.contains = contains;
@@ -114,7 +114,7 @@ function find(element){
         }
     }
     return -1;
-};
+}
 
 var print = function(){
     console.warn("ADT-List", this.dataStore);
@@ -132,5 +132,18 @@ list.append(5);
 list.append(6);
 list.print();
 list.insert(3, 10);
+
+// console.log(list.contains(20));
+
+
+function insertBiggerNumber(num) {
+    while(list.next()){
+        if(num < list.getElement()){
+            return;
+        }
+    }
+    list.append(num);
+}
+
+insertBiggerNumber(11);
 list.print();
-console.log(list.contains(20));
