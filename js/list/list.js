@@ -85,16 +85,18 @@ var end = function(){
 
 var prev = function(){
     if(this.pos > 0){
-        this.pos -= 1;
+        --this.pos;
         return true;
     }
+    return false;
 };
 
 var next = function(){
-    if(this.pos < this.listSize){
-        this.pos += 1;
+    if(this.pos < this.listSize - 1){
+        ++this.pos;
         return true;
     }
+    return false;
 };
 
 var currPos = function(){
