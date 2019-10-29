@@ -4,7 +4,7 @@ function List(){
     this.dataStore = [];
     this.listSize = 0;
     this.pos = 0;
-    this.length = this.dataStore.length;
+    this.length = length;
     this.clear = clear;
     this.toString = toString;
     this.getElement = getElement;
@@ -21,12 +21,20 @@ function List(){
     this.print = print;
 }
 
+var length = function(){
+    return this.listSize;
+};
+
 var clear = function(){
     this.dataStore = [];
 };
 
 var toString = function(){
-    return this.dataStore.toString();
+    var stringValue = '';
+    for(var i=0; i<this.listSize; i++){
+        stringValue += (this.listSize -1 === i) ? this.dataStore[i] : this.dataStore[i] + ',';
+    }
+    return stringValue;
 };
 
 var getElement = function(){
@@ -50,7 +58,7 @@ function remove(element){
         this.dataStore[i] = this.dataStore[i+1];
     }
     this.dataStore.pop();
-    // this.dataStore.splice(pos, num);
+    this.listSize--;
 };
 
 var front = function(){
@@ -87,7 +95,7 @@ function find(element){
 };
 
 var print = function(){
-    console.log(this.dataStore);
+    console.warn("ADT-List", this.dataStore);
 };
 
 
@@ -103,3 +111,4 @@ list.append(6);
 list.print();
 list.remove(3);
 list.print();
+console.log(list.toString());
