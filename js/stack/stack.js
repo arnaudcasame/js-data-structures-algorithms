@@ -24,6 +24,7 @@ function push(element) {
 
 function pop() {
     var data = [];
+    var lastElement = this.dataStore[this.length - 1];
     for(i=0; i<this.length - 1; i++){
         data[i] = this.dataStore[i];
     }
@@ -31,6 +32,7 @@ function pop() {
     this.top--;
     this.length--;
     this.empty = this.length ? true : false;
+    return lastElement;
 }
 
 function peek() {
@@ -42,6 +44,8 @@ function print(){
 }
 
 var stack = new Stack();
+
+debugger;
 
 stack.push(1);
 stack.push(2);
