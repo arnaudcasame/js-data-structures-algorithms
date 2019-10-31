@@ -45,7 +45,7 @@ function print(){
 
 var stack = new Stack();
 
-debugger;
+// debugger;
 
 stack.push(1);
 stack.push(2);
