@@ -1,6 +1,6 @@
 function Stack(){
-    this.top = -1;
-    this.length = 0;
+    this.top = 0;
+    this.length = length;
     this.empty = true;
     this.push = push;
     this.pop = pop;
@@ -11,32 +11,23 @@ function Stack(){
 }
 
 function clear(){
-    delete this.dataStore;
-    this.dataStore = [];
-    this.top = this.length = 0;
+    this.top = 0;
 }
 
 function push(element) {
-    this.dataStore[++this.top] = element;
-    this.length++;
-    this.empty = false;
+    this.dataStore[this.top++] = element;
 }
 
 function pop() {
-    var data = [];
-    var lastElement = this.dataStore[this.length - 1];
-    for(i=0; i<this.length - 1; i++){
-        data[i] = this.dataStore[i];
-    }
-    this.dataStore = data;
-    this.top--;
-    this.length--;
-    this.empty = this.length ? true : false;
-    return lastElement;
+    return this.dataStore[--this.top];
 }
 
 function peek() {
-   return this.dataStore[this.top];
+   return this.dataStore[this.top-1];
+}
+
+function length(){
+    return this.top;
 }
 
 function print(){
@@ -44,8 +35,6 @@ function print(){
 }
 
 var stack = new Stack();
-
-// debugger;
 
 stack.push(1);
 stack.push(2);
