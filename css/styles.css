@@ -3,6 +3,46 @@
     padding: 0;
 }
 
+header{
+    height: 50px;
+    background-color: blueviolet;
+}
+
+header > ul{
+    height: 100%;
+    list-style-type: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+
+header > ul > li{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+header>ul>li:hover {
+    color: blueviolet;
+    background-color: white;
+    cursor: pointer;
+}
+
+ul > li > a{
+    height: 100%;
+    width: 100%;
+    padding: 25px 10px 0px 10px;
+    text-decoration: none;
+    color: white;
+    align-items: center;
+}
+
+header>ul>li:hover>a {
+    color: blueviolet;
+    cursor: pointer;
+}
+
 h3{
     margin-top: 10px;
     text-align: center;
