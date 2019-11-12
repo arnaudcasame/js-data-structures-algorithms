@@ -10,14 +10,14 @@ element (property) | Current accessible node of a Linked-List
 next (property)| The node that the current node is pointing to.
 
 
-### The Linked-List Class blueprint
+### The Circularly Linked-List Class blueprint
 | Elements | Details |
 |----------------------|-------------------|
 head (property) | Is the first node of the Linked-List
-insert (function) | Adds a node next the current node of the linked-list
-display (function) | Removes element from the top of the stack
-remove (function) | Returns element that is at the top of the stack
-find (function) | Removes all the elements from a stack
+insert (function) | Adds a node next to the end of the linked-list
+display (function) | Displays the nodes of the Circularly Linked List
+remove (function) | Removes the node corresponding to the specified element from the Circularly Linked List
+find (function) | Finds the node corresponding to the specified element
 
 
 
