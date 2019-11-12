@@ -31,7 +31,7 @@ function insert(newElement, item) {
 
 function display(){
     var currNode = this.head;
-    while(currNode.next && currNode.next.element !== 'head'){
+    while(currNode.next && currNode.next.element != 'head'){
         console.log(currNode.next.element);
         currNode = currNode.next;
     }
