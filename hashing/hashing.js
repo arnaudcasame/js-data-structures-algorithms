@@ -12,8 +12,8 @@ function put(data) {
     this.table[hashed] = data;
 }
 
-function get(element) {
-    
+function get(key) {
+    return this.table[key];
 }
 
 function simpleHash(data) {
@@ -67,7 +67,8 @@ function genStuData(arr) {
 
 
 var numStudents = 10; var arrSize = 97; var idLen = 9;
-var students = new Array(numStudents); genStuData(students);
+var students = new Array(numStudents);
+genStuData(students);
 console.log ("Student data: \n");
 for (var i = 0; i < students.length; ++i) {
    console.log(students[i].substring(0, 9) + " " + students[i].substring(9)); // prints : 016764785 58
@@ -75,7 +76,6 @@ for (var i = 0; i < students.length; ++i) {
 console.log("\n\nData distribution: \n");
 var hTable = new HashTable();
 for (var i = 0; i < students.length; ++i) {
-    console.log(students[i]);
    hTable.put(students[i]);
 }
 hTable.showDistro(); // Key: 105, Value: 01676478558
